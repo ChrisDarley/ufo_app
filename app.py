@@ -1,11 +1,11 @@
 import dash
 from dash import Dash, html, dcc
-# from populate_data import populate
-
-app = Dash(__name__, use_pages=True)
+from populate_data import populate
 
 # data should already be populated for production app
-# populate()
+populate()
+
+app = Dash(__name__, use_pages=True)
 
 app.layout = html.Div([
     # html.H1('Multi-page app with Dash Pages'),

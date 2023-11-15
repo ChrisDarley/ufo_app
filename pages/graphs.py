@@ -39,7 +39,8 @@ layout = html.Div([
             children='Historical Prevalence of UFO Shapes',
             style={'textAlign':'center'}
             )]),
-    html.Div(dcc.Loading(children=dcc.Graph(id='graph-2-content'))),
+    html.Div(dcc.Loading(
+        children=dcc.Graph(id='graph-2-content'))),
     html.Div([
         html.Div([
             html.Label(children='Optional: Select Country'),

@@ -96,11 +96,11 @@ def create_map_object():
         ]
     })
 
-    fig_dict["layout"].update({"legend":{
-        "title":{
-            "text":"Shape"}
-        }
-    })
+    fig_dict["layout"].update({
+        "legend":{
+            "title":{
+                "text":"Shape"}
+        }})
 
     # fig_dict["layout"].update({"paper_bgcolor":"mediumspringgreen"})
     # {"legend": {

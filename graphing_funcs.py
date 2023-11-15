@@ -74,6 +74,7 @@ def update_graph_2(tweaked, country):
             'range': [0, calculate_yaxis2(dataset["cumsum"].max())], 
             'overlaying': 'y', 'side': 'right', 'nticks': 5,
             'color':'#FF0000'},
+        'height':700,
         'hovermode': "closest",
         'title':"Yearly and Cumulative Count of Shapes",
         'legend': {'orientation': 'h'}

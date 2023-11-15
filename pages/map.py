@@ -66,7 +66,7 @@ layout = html.Div([
             style={'margin-left':'6.5%', 'margin-right':'1.5%',
                 'width':'20%', 'display':'inline-block'}),
         html.Div([
-            html.Label('Optional:   Select Duration (minutes)'),
+            html.Label('Optional: Select Duration (minutes)'),
             dcc.RangeSlider(
                 0,60,1,
                 marks={i:{"label":str(i)} for i in [

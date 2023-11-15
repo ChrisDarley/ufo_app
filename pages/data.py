@@ -80,7 +80,7 @@ layout = html.Div([
                 value=['Rachel (highway 318)', 'Rachel'],
                 multi=True,
                 id='city-dropdown',
-                placeholder='City')
+                placeholder='Cities')
             ],
             style={'display':'inline-block', 'width':'20%', 'margin-right':'1%'}
         ),
@@ -94,7 +94,7 @@ layout = html.Div([
                 value=[],
                 id='shape-dropdown',
                 multi=True,
-                placeholder="Shape",)],
+                placeholder="Shapes",)],
             style={'display':'inline-block', 'width':'35%'}
         ),
     ]),
