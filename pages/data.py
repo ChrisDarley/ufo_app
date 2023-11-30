@@ -23,6 +23,12 @@ with open('cmap.json', 'r') as f:
     cmap = json.load(f)
 f.close()
 
+column_map = {
+    "datetime":"Date/ Time", "state_name":"State",
+    "county_name":"County", "city_name":"City",
+    "shape":"Shape", "duration_formatted":"Duration",
+    "comments":"Summary"}
+
 # filtered = map_data_formatted.loc[map_data_formatted['shape']=='disk']
 
 ############################################
@@ -33,10 +39,21 @@ dash.register_page(__name__)
 # app.layout = html.Div([
 layout = html.Div([
     html.Div([
-        html.H1(
-            children='Check out your home town!',
-            style={'textAlign':'center'}
+        html.Div(
+            children=html.B('Check out your home town!'),
+            style={
+                'textAlign':'center',
+                'fontSize':35,
+                'margin-bottom':'0.3%'
+                }
         ),
+        html.Div(
+            children='Downloads in csv format',
+            style={
+                'textAlign':'center',
+                'margin-bottom':'1%',
+                'fontSize':18}
+        )
     ]),
 
     html.Div([
@@ -102,6 +119,7 @@ layout = html.Div([
     #         children='Exports in cvs format',
     #         style={'textAlign':'left', 'margin-top':'0.8%'}
     #     ),
+
     html.Div([
         dcc.Loading(children=dash_table.DataTable(
             (map_data_formatted
@@ -110,8 +128,9 @@ layout = html.Div([
                  (map_data_formatted["county_name"]=="Lincoln")&
                  (map_data_formatted["city_name"].isin(["Rachel (highway 318)", "Rachel"]))]
              .to_dict('records')),
-            [{"name": i, "id": i} for i in [
-                "datetime", "city_name", "shape",
+            [{"name": column_map[i], "id": i} for i in [
+                "datetime", "state_name", "county_name", 
+                "city_name", "shape",
                 "duration_formatted", "comments"
             ]],
             export_format='csv',
